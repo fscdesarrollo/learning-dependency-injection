@@ -10,9 +10,9 @@ namespace Leargning.DependencyInjection.Api.EntryPoint.UseCases.Operations.GetOp
         public Operationservice OperationService { get; set; }
     }
 
-    public class Trascient : InjectionType 
+    public class Trascient : InjectionType
     {
-        public Trascient(Guid id, string description) : base(id,description) { }
+        public Trascient(Guid id, string description) : base(id, description) { }
 
     }
 

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace Leargning.DependencyInjection.Api.Infraestructure.Bootsrap
 {
@@ -10,6 +11,10 @@ namespace Leargning.DependencyInjection.Api.Infraestructure.Bootsrap
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services, IConfiguration configuration)
         {
+
+            services.AddHealthChecks()
+            .AddCheck("Custom Message", () =>
+                HealthCheckResult.Healthy("Custom Message is OK!"), tags: new[] { "Example" });
 
             services.AddDependencyInjectionConfiguration(configuration);
 

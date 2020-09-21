@@ -37,12 +37,12 @@ namespace Leargning.DependencyInjection.Api.Infraestructure.Bootsrap.Middlewares
             context.Request.EnableBuffering();
             await using var requestStream = _recyclableMemoryStreamManager.GetStream();
             await context.Request.Body.CopyToAsync(requestStream);
-            
+
             _logger.LogInformation($"Start processing HTTP request {context.Request.Method} {context.Request.Path}");
 
             context.Request.Body.Position = 0;
         }
-        
+
         private async Task LogResponse(HttpContext context)
         {
             var originalBodyStream = context.Response.Body;
@@ -56,7 +56,7 @@ namespace Leargning.DependencyInjection.Api.Infraestructure.Bootsrap.Middlewares
             _timer.Stop();
 
             _logger.LogInformation($"Received HTTP response after {_timer.ElapsedMilliseconds} - {context.Response.StatusCode}");
-            
+
             await responseBody.CopyToAsync(originalBodyStream);
         }
     }
