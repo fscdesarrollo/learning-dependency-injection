@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CD57793D-AC6E-4424-B9C0-432D4F73BBC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Leargning.DependencyInjection.Api", "src\Leargning.DependencyInjection.Api\Leargning.DependencyInjection.Api.csproj", "{7B2795E3-705F-4FE0-A930-80CCBEE81CB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Leargning.DependencyInjection.Api", "src\Leargning.DependencyInjection.Api\Leargning.DependencyInjection.Api.csproj", "{7B2795E3-705F-4FE0-A930-80CCBEE81CB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D10E99BD-695F-496C-B39C-428F8EB9D8F3}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
 using Leargning.DependencyInjection.Api.Infraestructure.Bootsrap;
+using Leargning.DependencyInjection.Api.Infraestructure.Bootsrap.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,7 @@ namespace Leargning.DependencyInjection.Api
             IApplicationBuilder app,
             IWebHostEnvironment env)
         {
+            app.UseMiddleware<RequestResponseLoggingMiddleware>();
             app.Configure(env);
         }
     }
