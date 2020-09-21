@@ -9,6 +9,9 @@ namespace Leargning.DependencyInjection.Api
 {
     public class Startup
     {
+
+        private const string BASE_PATH = "/basepath/";
+
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -28,6 +31,7 @@ namespace Leargning.DependencyInjection.Api
             IApplicationBuilder app,
             IWebHostEnvironment env)
         {
+            app.UsePathBase(BASE_PATH);
             app.UseMiddleware<RequestResponseLoggingMiddleware>();
             app.Configure(env);
         }
